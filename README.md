@@ -1,4 +1,10 @@
-# Solo iOS SDK
+# SOLO AI - SDK - iOS Library
+Empower Your Android App with Emotional AI: Introducing SOLO AI - iOS Sample App"
+
+Discover the transformative potential of Emotional AI in your Android app with our SOLO iOS Sample App.
+This iOS Sample App showcases the seamless integration of our cutting-edge Emotional AI technology into your mobile applications, unlocking new dimensions of user engagement, personalization, and insight.
+With SOLO SDK, developers can effortlessly implement advanced emotion recognition, facial micro-expression analysis, and sentiment analysis features into their iOS apps.
+For more details: www.imsolo.ai 
 
 ## Using
 Add dependency to your `Podfile`

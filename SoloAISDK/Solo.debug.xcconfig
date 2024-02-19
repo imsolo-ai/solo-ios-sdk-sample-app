@@ -1,0 +1,10 @@
+//
+//  solo.xcconfig
+//  SoloAISDK
+//
+//  Created by Evgeniy on 29.12.2021.
+//  Copyright © 2021 CocoaPods. All rights reserved.
+//
+#include "Pods/Target Support Files/Pods-SoloAISDK_Example/Pods-SoloAISDK_Example.debug.xcconfig"
+
+#include "SoloAISDK/ApiKey.xcconfig"

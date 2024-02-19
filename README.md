@@ -1,4 +1,4 @@
-# Solo iOS Library
+# Solo iOS SDK
 
 ## Using
 Add dependency to your `Podfile`

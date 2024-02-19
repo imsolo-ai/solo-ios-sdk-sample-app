@@ -10,9 +10,9 @@ pod 'SoloAISDK', '~> 1.0.0'
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-Create file `ApiKey.xcconfig` in `Example/SoloAISDK` directory.
+Create file `ApiKey.xcconfig` in `SoloAISDK` directory.
 
-Full path from project folder: `Example/SoloAISDK/ApiKey.xcconfig`
+Full path from project folder: `SoloAISDK/ApiKey.xcconfig`
 
 Put your `APP_ID` and `APP_KEY` variables into `ApiKey.xcconfig`
 
@@ -20,61 +20,6 @@ Put your `APP_ID` and `APP_KEY` variables into `ApiKey.xcconfig`
 API_KEY = apikey123example
 APP_ID = app-id-123-example
 ```
-
-## Podspec 
-
-Project contains development and release `.podspec` files.
-1. Development Podspec file (version 0.0.1) depends on local source files and assets.
-2. Release Podspec file depends on release `.xcframework` files with compiled library.
-
-For changing selected Podspec file specify it in `Podfile`. After run `pod install` in `Example` folder.
-
-## Library building & publishing
-
-To publish a library, you need: 
-1. Select `Development Podspec` file in `Podfile`. 
-2. Run `pod install` in `Example` folder.
-3. Run `build.sh` from project folder.
-
-After execution of `build.sh` in project folder will be 2 files:
-1. SoloAISDK.xcframework
-2. TensorFlowLite.xcframework
-
-You can test libraries building result:
-1. Select `Release Podspec` file in `Podfile`.
-2. Run `pod install` in `Example` folder.
-3. Run Example.
-
-After testing, it requires to be deployed to `Artifactory` repository.
-Archive necessary files with `archive.sh`. Then upload to `Artifactory` in cocoapod repository.
-You can do it manually via web site or via terminal (use `Set Me Up` button from web version to get instructions).
-
-Repository file layout:
-- [cocoapods_repo_name]
-  - [library_name]
-    - [version]
-      - ['library_name'-'version'.tar.gz]
-  - [library_name]
-    - ...
-
-After deploying change in Release Podspec file according with new version:
-1. `s.version`
-2. `s.source`
-
-Update Podspec (Release) file on Cocoapod trunk repository.
-
-`pod trunk push SoloAISDK.podspec`
-
-Then you will be able to get library from Cocoapod. 
-Change dependency in `Podfile` to remote version of pod. Run `pod install --repo-update` from `Example` folder. Run project to test.
-
-## Encryption files
-
-For files encryption was created `Encryption.playground`. 
-Add files to playground resources into `Decrypted` folder.
-Add enctypted names for decrypted files into config dictionary `ENCRYPTED_NAMES` in `EncryptionManager.swift`
-Run playground and follow instructions from output to find encrypted files.
-Pod `SoloAISDK` contains file `DataLoader.swift` which is the copy with changes of files `AES.swift` and `EnctyptionManager.swift`.
 
 ## Library Documentation
 

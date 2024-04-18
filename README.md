@@ -252,3 +252,30 @@ public struct ImageDimensions: Codable {
     public let height: Double
 }
 ```
+
+#### LandmarkerResults
+
+```swift
+public struct LandmarkerResults {
+    let blendshapes: [String: BlendshapeScore]
+    let headAngles: HeadAngles
+}
+```
+
+#### BlendshapeScore
+
+```swift
+public struct BlendshapeScore: Codable {
+    public let score: Float
+}
+```
+
+#### HeadAngles
+
+```swift
+public struct HeadAngles: Codable {
+    public let yaw: Float
+    public let pitch: Float
+    public let roll: Float
+}
+```

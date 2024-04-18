@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k45-PQ-8fZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k45-PQ-8fZ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,13 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRu-99-9a2">
-                                <rect key="frame" x="16" y="621" width="343" height="30"/>
-                                <state key="normal" title="Start checkup!"/>
-                                <connections>
-                                    <action selector="buttonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tKD-bs-77g"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="300" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmg-bs-bdG">
                                 <rect key="frame" x="16" y="80" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -34,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T64-N9-hqM">
-                                <rect key="frame" x="16" y="575" width="343" height="30"/>
+                                <rect key="frame" x="16" y="621" width="343" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Open monitoring mode"/>
                                 <connections>
@@ -44,12 +37,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="DRu-99-9a2" secondAttribute="trailing" constant="16" id="5Dw-2H-Nev"/>
                             <constraint firstAttribute="trailing" secondItem="T64-N9-hqM" secondAttribute="trailing" constant="16" id="Egj-ip-g5M"/>
                             <constraint firstItem="Bmg-bs-bdG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="G6p-L6-iWV"/>
-                            <constraint firstItem="DRu-99-9a2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="PYb-pr-f6s"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="DRu-99-9a2" secondAttribute="bottom" constant="16" id="UHG-WT-Oza"/>
-                            <constraint firstItem="DRu-99-9a2" firstAttribute="top" secondItem="T64-N9-hqM" secondAttribute="bottom" constant="16" id="bmf-Hh-oyP"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="T64-N9-hqM" secondAttribute="bottom" constant="16" id="HOv-dn-vVy"/>
                             <constraint firstItem="Bmg-bs-bdG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="cM2-oM-vgo"/>
                             <constraint firstAttribute="trailing" secondItem="Bmg-bs-bdG" secondAttribute="trailing" constant="16" id="fds-zq-Orm"/>
                             <constraint firstItem="T64-N9-hqM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="h88-sh-sb5"/>
@@ -57,7 +47,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="uWp-UH-9pQ"/>
                     <connections>
-                        <outlet property="button" destination="DRu-99-9a2" id="fmn-N0-Ezw"/>
                         <outlet property="label" destination="Bmg-bs-bdG" id="rQs-Ui-yey"/>
                         <outlet property="openMonitoringBtn" destination="T64-N9-hqM" id="MUt-G5-p2s"/>
                     </connections>

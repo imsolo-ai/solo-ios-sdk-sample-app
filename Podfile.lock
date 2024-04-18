@@ -1,0 +1,30 @@
+PODS:
+  - MediaPipeTasksCommon (0.10.12)
+  - MediaPipeTasksVision (0.10.12):
+    - MediaPipeTasksCommon (= 0.10.12)
+  - SoloAISDK (1.0.2):
+    - MediaPipeTasksVision
+    - TensorFlowLiteC (~> 2.11.0)
+  - TensorFlowLiteC (2.11.0):
+    - TensorFlowLiteC/Core (= 2.11.0)
+  - TensorFlowLiteC/Core (2.11.0)
+
+DEPENDENCIES:
+  - SoloAISDK
+
+SPEC REPOS:
+  trunk:
+    - MediaPipeTasksCommon
+    - MediaPipeTasksVision
+    - SoloAISDK
+    - TensorFlowLiteC
+
+SPEC CHECKSUMS:
+  MediaPipeTasksCommon: 254e6bff77804b262f6ecf180477142ea551e802
+  MediaPipeTasksVision: 78d5c47cd7996b4d815bacba0a52dbf01458dfaf
+  SoloAISDK: 988198ddfb5365d3b304f7344bacc8a4c03d3428
+  TensorFlowLiteC: 8a8cb6fa20ad74dff29b5e490d02c36a14d48148
+
+PODFILE CHECKSUM: 02f5a65e57f8a8ed87d42e6cd392017b9815962a
+
+COCOAPODS: 1.15.2

@@ -12,7 +12,6 @@ import SoloAISDK
 class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var openMonitoringBtn: UIButton!
 
     private var solo: Solo?
@@ -21,7 +20,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        button.isEnabled = false
         openMonitoringBtn.isEnabled = false
         label.text = "Loading..."
 
@@ -29,7 +27,7 @@ class ViewController: UIViewController {
             apiKey: getConfigValue(from: "Solo - API Key"),
             appId: getConfigValue(from: "Solo - App ID")
         )
-        
+
         Solo.initialize(credentials: creds) { (solo: Solo?, status: InitializeStatus) in
             if status == .success, let solo = solo {
                 self.solo = solo
@@ -45,7 +43,6 @@ class ViewController: UIViewController {
                 solo.setFramesPerSecond(fps: solo.getConfig().minFps)
 
                 self.label.text = "Ready!"
-                self.button.isEnabled = true
                 self.openMonitoringBtn.isEnabled = true
             } else if status == .unauthorized {
                 self.label.text = "Wrong credentials"
@@ -53,15 +50,6 @@ class ViewController: UIViewController {
                 self.label.text = "Something went wrong"
             }
         }
-    }
-
-    @IBAction func buttonPress(_ sender: UIButton) {
-        solo?.cameraDelegate = self
-        guard let vc = solo?.createViewController() else {
-            fatalError("Solo object not initialized!")
-        }
-
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func openMonitoringMode(_ sender: UIButton) {
@@ -84,24 +72,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : SoloCameraDelegate {
-
-    func checkupResults(result: EmotionalResult?) {
-        self.navigationController?.popViewController(animated: true)
-        solo?.cameraDelegate = nil
-        guard let result = result else {
-            self.label.text = "Result error"
-            return
-        }
-        self.label.text = String(describing: result)
-    }
-
-    func checkupWasStarted() {
-        self.navigationController?.topViewController?.title = "Checkup started"
-    }
-
-    func checkupWasEnded() {
-        self.navigationController?.topViewController?.title = "Checkup ended"
-    }
 
     func sessionWasInterrupted() {
         print("sessionWasInterrupted")
